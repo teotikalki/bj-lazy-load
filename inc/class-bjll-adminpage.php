@@ -67,6 +67,12 @@ class BJLL_AdminPage extends scbAdminPage {
 				'type' => 'text',
 				'name' => 'threshold',
 				'desc' => sprintf( '<p class="description">%s</p>', __( 'How close to the viewport the element should be when we load it. In pixels. Example: 200', 'bj-lazy-load' ) ),
+			),
+			array(
+				'title' => __( 'Use low-res preview image', 'bj-lazy-load' ),
+				'type' => 'radio',
+				'name' => 'preview',
+				'value' => array( 'yes' => __( 'Yes', 'bj-lazy-load' ), 'no' => __( 'No', 'bj-lazy-load' ) ),
 			)
 		);
 
