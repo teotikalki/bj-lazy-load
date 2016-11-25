@@ -321,7 +321,9 @@ class BJLL {
 		*/
 		$skip_classes_quoted = array_map( 'preg_quote', $skip_classes );
 		$skip_classes_ORed = implode( '|', $skip_classes_quoted );
-		$regex = '/<(\w+)\s[^>]*(?:class|id)\s*=\s*([\'"]).*?[^\-]\b(?:' . $skip_classes_ORed . ')\b[^\-].*?\2[^>]*>.*<\/\\1>/isU';
+
+		$regex = '/<\s*\w*\s*class\s*=\s*[\'"]?(|.*\s)?' . $skip_classes_ORed . '(|\s.*)?[\'"]?.*?>/isU';
+
 		return preg_replace( $regex, '', $content );
 	}
 
